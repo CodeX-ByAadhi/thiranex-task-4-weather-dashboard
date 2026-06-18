@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SkyCast is a premium real-time weather dashboard built using Fetch API, async/await, REST API integration, JSON parsing, and responsive UI design for Thiranex Task 4." />
+  <title>SkyCast | Real-Time Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Weather Intelligence • Thiranex Task 4</p>
+        <h1 id="hero-title">SkyCast</h1>
+        <p class="subtitle">Real-time weather dashboard powered by asynchronous JavaScript, REST APIs, JSON data processing, and responsive UI architecture.</p>
+      </div>
+      <div class="hero-badge" aria-label="Live API powered dashboard">
+        <span>⚡</span>
+        <p>Live API</p>
+      </div>
+    </section>
+
+    <section class="search-panel" aria-label="Search weather by city">
+      <form id="weatherForm" class="search-form">
+        <label for="cityInput" class="sr-only">Enter city name</label>
+        <input id="cityInput" type="search" placeholder="Search city, e.g., Chennai" autocomplete="off" required />
+        <button type="submit">Search Weather</button>
+      </form>
+      <p id="statusMessage" class="status" role="status">Enter a city name to view live weather details.</p>
+    </section>
+
+    <section class="dashboard-grid" aria-label="Weather dashboard">
+      <article class="weather-card main-card">
+        <div class="location-row">
+          <div>
+            <p class="label">Current Location</p>
+            <h2 id="locationName">Chennai, India</h2>
+          </div>
+          <div id="weatherIcon" class="weather-icon" aria-hidden="true">☀️</div>
+        </div>
+        <div class="temperature-row">
+          <p id="temperature" class="temperature">--°C</p>
+          <div>
+            <p id="condition" class="condition">Search to load weather</p>
+            <p id="updatedTime" class="updated">Updated live using REST API</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="metric-card">
+        <span>💧</span>
+        <p class="label">Humidity</p>
+        <h3 id="humidity">--%</h3>
+      </article>
+
+      <article class="metric-card">
+        <span>🌬️</span>
+        <p class="label">Wind Speed</p>
+        <h3 id="windSpeed">-- km/h</h3>
+      </article>
+
+      <article class="metric-card">
+        <span>🌡️</span>
+        <p class="label">Feels Like</p>
+        <h3 id="feelsLike">--°C</h3>
+      </article>
+    </section>
+
+    <section class="forecast-section" aria-labelledby="forecast-title">
+      <div class="section-heading">
+        <p class="eyebrow">Forecast Preview</p>
+        <h2 id="forecast-title">5-Day Weather Outlook</h2>
+      </div>
+      <div id="forecastGrid" class="forecast-grid"></div>
+    </section>
+
+    <section class="api-info">
+      <div>
+        <h2>Built with Async JavaScript</h2>
+        <p>This project fetches geocoding and weather data from public REST APIs, handles errors, parses nested JSON, and updates the DOM dynamically based on user input.</p>
+      </div>
+      <ul>
+        <li>Fetch API</li>
+        <li>Async / Await</li>
+        <li>REST API</li>
+        <li>Error Handling</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
